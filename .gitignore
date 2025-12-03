@@ -1,0 +1,82 @@
+.claude/
+.claude/*.local.json
+
+# Dependencies
+# Причина: устанавливаются через npm/yarn install
+/node_modules
+.idea/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing
+ # Причина: отчеты о покрытии тестов генерируются автоматически
+/coverage
+*.lcov
+.nyc_output
+
+
+# Next.js
+ Причина: кэш и билды генерируются при каждой сборке
+/.next/
+/out/
+.next/
+
+
+# Production
+# Причина: продакшн-билды создаются при деплое
+/build
+/dist
+
+# PRISMA GENERATED
+# Причина: Prisma Client генерируется при 'prisma generate'
+/prisma/client/
+
+
+# ENVIRONMENT VARIABLES
+# Причина: содержат СЕКРЕТЫ (DATABASE_URL, NEXTAUTH_SECRET, API ключи)
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# LOGS & DEBUG
+# Причина: логи не нужны в репозитории
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# OS-SPECIFIC FILES
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
