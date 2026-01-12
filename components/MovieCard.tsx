@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import { useRouter } from "next/router";
 
 import { IoPlay } from "react-icons/io5";
 import FavoriteButton from "@/components/FavoriteButton";
@@ -9,6 +10,7 @@ interface IMovieCardProps {
 }
 
 const MovieCard: FC<IMovieCardProps> = ({ data }) => {
+    const router = useRouter();
     return (
         <div className='group bg-zinc-900 col-span relative h-[12vw]'>
             <img className='
@@ -69,8 +71,7 @@ const MovieCard: FC<IMovieCardProps> = ({ data }) => {
                         justify-center
                         items-center
                         transition
-                        hover:bg-neutral-300' onClick={() => {
-                        }}>
+                        hover:bg-neutral-300' onClick={() => router.push(`/watch/${data?.id}`)}>
                             <IoPlay/>
                         </div>
                         <FavoriteButton movieId={data?.id} />
