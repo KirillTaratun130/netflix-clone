@@ -3,6 +3,7 @@ import React from 'react';
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 import useBillBoard from "@/hooks/useBillBoard";
+import PlayButton from "@/components/PlayButton";
 
 const Billboard = () => {
     const { data, error, isLoading } = useBillBoard()
@@ -41,6 +42,7 @@ const Billboard = () => {
                     { data?.description }
                 </p>
                 <div className='flex flex-row items-center mt-3 md:mt-4 gap-3'>
+                    <PlayButton movieId={ data?.id } />
                     <button className='
                     bg-white
                     text-white
