@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 import useBillBoard from "@/hooks/useBillBoard";
 import PlayButton from "@/components/PlayButton";
+import useInfoModal from "@/hooks/useInfoModal";
 
 const Billboard = () => {
-    const { data, error, isLoading } = useBillBoard()
+    const { data, error, isLoading } = useBillBoard();
+    const { openModal } = useInfoModal();
+
+    const handleOpenModal = useCallback(() => {
+        openModal(data?.id)
+    }, [openModal, data?.id])
 
     return (
         <div className='relative h-[56.25vw]'>
@@ -43,7 +49,7 @@ const Billboard = () => {
                 </p>
                 <div className='flex flex-row items-center mt-3 md:mt-4 gap-3'>
                     <PlayButton movieId={ data?.id } />
-                    <button className='
+                    <button onClick={handleOpenModal} className='
                     bg-white
                     text-white
                     bg-opacity-30
